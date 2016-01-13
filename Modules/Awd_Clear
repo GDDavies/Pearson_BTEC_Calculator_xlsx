@@ -1,0 +1,3 @@
+Sub Awd_Clear()
+Range("J9:J12,H11:H12").ClearContents
+End Sub
