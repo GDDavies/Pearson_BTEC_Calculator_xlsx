@@ -1,0 +1,294 @@
+Private Sub Worksheet_Change(ByVal Target As Range)
+                                                                    'Clear optional units and grades when sector changed
+Dim cell As Range
+Application.ScreenUpdating = False 'Disable screen update to stop flickering
+    For Each cell In Target
+        If cell.Address = "$G$5" Then
+            Application.EnableEvents = False
+                Range("G17:G21,G23:G25,I9:I10,I12:I15,I17:I21,I23:I25").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+                                                                    'Clear grades when optional unit changed
+        For Each cell In Target
+        If cell.Address = "$G$17" Then
+            Application.EnableEvents = False
+                Range("I17").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+    
+        For Each cell In Target
+        If cell.Address = "$G$18" Then
+            Application.EnableEvents = False
+                Range("I18").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+    
+        For Each cell In Target
+        If cell.Address = "$G$19" Then
+            Application.EnableEvents = False
+                Range("I19").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+    
+        For Each cell In Target
+        If cell.Address = "$G$20" Then
+            Application.EnableEvents = False
+                Range("I20").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+    
+    For Each cell In Target
+        If cell.Address = "$G$21" Then
+            Application.EnableEvents = False
+                Range("I21").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+    
+     For Each cell In Target
+        If cell.Address = "$G$23" Then
+            Application.EnableEvents = False
+                Range("I23").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+    
+     For Each cell In Target
+        If cell.Address = "$G$24" Then
+            Application.EnableEvents = False
+                Range("I24").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+    
+     For Each cell In Target
+        If cell.Address = "$G$25" Then
+            Application.EnableEvents = False
+                Range("I25").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+    
+Dim cellG5 As String
+
+cellG5 = Range("G5").Value
+                                                                                                                           
+If cellG5 = "Art and Design" Then
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = True
+    Rows("16:20").Hidden = False
+    Rows("21:25").Hidden = True
+    
+ElseIf cellG5 = "Art and Design Design Crafts" Then
+    Rows("13:14").Hidden = False
+    Rows("15").Hidden = True
+    Rows("16:18").Hidden = False
+    Rows("19:25").Hidden = True
+    
+ElseIf cellG5 = "Art and Design Fashion and Textiles" Then
+    Rows("14:15").Hidden = False
+    Rows("16:25").Hidden = True
+    
+ElseIf cellG5 = "Art and Design Photography" Then
+    Rows("13:14").Hidden = False
+    Rows("15").Hidden = True
+    Rows("16:18").Hidden = False
+    Rows("19:25").Hidden = True
+    
+ElseIf cellG5 = "Art and Design Product Design" Then
+    Rows("13:14").Hidden = False
+    Rows("15").Hidden = True
+    Rows("16:18").Hidden = False
+    Rows("19:25").Hidden = True
+    
+ElseIf cellG5 = "Art and Design Visual Arts" Then
+    Rows("13:14").Hidden = False
+    Rows("15").Hidden = True
+    Rows("16:18").Hidden = False
+    Rows("19:25").Hidden = True
+    
+ElseIf cellG5 = "Art and Design Visual Communication" Then
+    Rows("13:14").Hidden = False
+    Rows("15").Hidden = True
+    Rows("16:18").Hidden = False
+    Rows("19:25").Hidden = True
+    
+ElseIf cellG5 = "Business" Then
+    Rows("13:15").Hidden = True
+    Rows("16:21").Hidden = False
+    Rows("22:25").Hidden = True
+    
+ElseIf cellG5 = "CPLD" Then
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = True
+    Rows("16:19").Hidden = False
+    Rows("20:25").Hidden = True
+    
+ElseIf cellG5 = "Construction and the Built Environment" Then
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = True
+    Rows("16:20").Hidden = False
+    Rows("21:25").Hidden = True
+    
+ElseIf cellG5 = "Creative Digital Media Production" Then
+    Rows("13:15").Hidden = True
+    Rows("16:19").Hidden = False
+    Rows("20:21").Hidden = True
+    Rows("24:25").Hidden = False
+    
+ElseIf cellG5 = "Engineering" Then
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = True
+    Rows("16:20").Hidden = False
+    Rows("21:25").Hidden = True
+    
+ElseIf cellG5 = "Health and Social Care" Then
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = True
+    Rows("16:20").Hidden = False
+    Rows("21:25").Hidden = True
+    
+ElseIf cellG5 = "Hospitality" Then
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = True
+    Rows("16:19").Hidden = False
+    Rows("20:21").Hidden = True
+    Rows("22:25").Hidden = False
+    
+ElseIf cellG5 = "Information and Creative Technology" Then
+    Rows("13:15").Hidden = True
+    Rows("16:21").Hidden = False
+    Rows("22:25").Hidden = True
+    
+ElseIf cellG5 = "Music" Then
+    Rows("13:15").Hidden = True
+    Rows("16:19").Hidden = False
+    Rows("20:21").Hidden = True
+    Rows("22:23").Hidden = False
+    Rows("24:25").Hidden = True
+    
+ElseIf cellG5 = "Public Services" Then
+    Rows("13:15").Hidden = True
+    Rows("16:21").Hidden = False
+    Rows("22:25").Hidden = True
+    
+ElseIf cellG5 = "Performing Arts Acting" Then
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = True
+    Rows("16:19").Hidden = False
+    Rows("20:21").Hidden = True
+    Rows("22:23").Hidden = False
+    Rows("24:25").Hidden = True
+    
+ElseIf cellG5 = "Performing Arts Dance" Then
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = True
+    Rows("16:19").Hidden = False
+    Rows("20:21").Hidden = True
+    Rows("22:23").Hidden = False
+    Rows("24:25").Hidden = True
+    
+ElseIf cellG5 = "Performing Arts Musical Theatre" Then
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = True
+    Rows("16:19").Hidden = False
+    Rows("20:21").Hidden = True
+    Rows("22:23").Hidden = False
+    Rows("24:25").Hidden = True
+    
+ElseIf cellG5 = "Performing Arts Production" Then
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = True
+    Rows("16:19").Hidden = False
+    Rows("20:21").Hidden = True
+    Rows("22:23").Hidden = False
+    Rows("24:25").Hidden = True
+    
+ElseIf cellG5 = "Sport" Then
+    Rows("13:15").Hidden = True
+    Rows("16:21").Hidden = False
+    Rows("22:25").Hidden = True
+    
+ElseIf cellG5 = "Travel and Tourism" Then
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = True
+    Rows("16:20").Hidden = False
+    Rows("21:25").Hidden = True
+    
+ElseIf cellG5 = "" Then
+    Rows("12:25").Hidden = False
+    
+End If
+                                                                    'Set number of optional unit boxes per sector
+Rows(26).Hidden = True
+
+'Optional B loop to check if GLH has been met and cell is empty
+
+    Dim i As Integer
+    For i = 23 To 25
+        If Range("H27").Value = 240 And Range("G" & i) = "" Then
+            Rows(i & ":" & i).EntireRow.Hidden = True
+        End If
+    Next i
+
+                                     
+'Hospitality Unit combination rule
+If Range("G5") = "Hospitality" And Range("G23").Value = "Unit 13 - Contemporary World Food Cooking Skills" And Range("G24") <> "Unit 6 - Planning, Preparing, Cooking and Finishing Food" Then Rows(26).Hidden = False
+If Range("G5") = "Hospitality" And Range("G24").Value = "Unit 13 - Contemporary World Food Cooking Skills" And Range("G23") <> "Unit 6 - Planning, Preparing, Cooking and Finishing Food" Then Rows(26).Hidden = False
+
+'Hiding unused optional unit rows when GLH is 240
+If Range("H17").Value = 60 And Range("H27").Value = 240 And Range("G18") = "" Then Rows(18).Hidden = True
+If Range("H17").Value = 30 And Range("H27").Value < 240 Then Rows(18).Hidden = False
+If Range("H27").Value >= 240 And Range("G17").Value = "" Then Rows(17).Hidden = True
+If Range("H27").Value >= 240 And Range("G18").Value = "" Then Rows(18).Hidden = True
+If Range("H27").Value >= 240 And Range("G19").Value = "" Then Rows(19).Hidden = True
+If Range("H27").Value < 240 And Range("G19").Value = "" And Range("G9") <> "Unit 1 - Introduction to Specialist Pathways in Art and Design" Then Rows(19).Hidden = False
+If Range("H27").Value >= 240 And Range("G20").Value = "" And Range("G5") <> "Hospitality" Then Rows(20).Hidden = True
+If Range("H27").Value < 240 And Range("G20").Value = "" And Range("G5") <> "Hospitality" And Range("G9") <> "Unit 1 - Introduction to Specialist Pathways in Art and Design" And Range("G5") <> "CPLD" Then Rows(20).Hidden = False
+If Range("H27").Value >= 240 And Range("G21").Value = "" Then Rows(21).Hidden = True
+If Range("H27").Value < 240 And Range("G21").Value = "" And Range("G5") = "Hospitality" Or Range("G5") = "Engineering" Then Rows(21).Hidden = True
+If Range("H27").Value >= 240 And Range("G25").Value = "" Then Rows(25).Hidden = True
+If Range("H27").Value = 240 And Range("G23") = "" Then Rows("22:23").Hidden = True
+
+If Range("G5") = "Creative Digital Media Production" And Range("H27").Value < 240 Then Rows(22).Hidden = False
+If Range("G5") = "Creative Digital Media Production" And Range("H27").Value < 240 And Range("G23").Value = "" Then Rows(23).Hidden = False
+
+If Range("G5") = "Music" And Range("H27").Value < 240 Then Rows(22).Hidden = False
+If Range("G5") = "Music" And Range("H27").Value < 240 And Range("G23").Value = "" Then Rows(23).Hidden = False
+
+If Range("G5") = "Performing Arts Acting" And Range("H27").Value < 240 Then Rows(22).Hidden = False
+If Range("G5") = "Performing Arts Acting" And Range("H27").Value < 240 And Range("G23").Value = "" Then Rows(23).Hidden = False
+If Range("G5") = "Performing Arts Acting" And Range("H27") < 240 Then Rows("22:23").Hidden = False
+
+If Range("G5") = "Performing Arts Dance" And Range("H27").Value < 240 Then Rows(22).Hidden = False
+If Range("G5") = "Performing Arts Dance" And Range("H27").Value < 240 And Range("G23").Value = "" Then Rows(23).Hidden = False
+If Range("G5") = "Performing Arts Dance" And Range("H27") < 240 Then Rows("22:23").Hidden = False
+
+If Range("G5") = "Performing Arts Musical Theatre" And Range("H27").Value < 240 Then Rows(22).Hidden = False
+If Range("G5") = "Performing Arts Musical Theatre" And Range("H27").Value < 240 And Range("G23").Value = "" Then Rows(23).Hidden = False
+If Range("G5") = "Performing Arts Musical Theatre" And Range("H27") < 240 Then Rows("22:23").Hidden = False
+
+If Range("G5") = "Performing Arts Production" And Range("H27").Value < 240 Then Rows(22).Hidden = False
+If Range("G5") = "Performing Arts Production" And Range("H27").Value < 240 And Range("G23").Value = "" Then Rows(23).Hidden = False
+If Range("G5") = "Performing Arts Production" And Range("H27") < 240 Then Rows("22:23").Hidden = False
+
+If Range("G19").Value <> "" And Range("H27").Value < 240 And Range("G5") <> "Hospitality" Then Rows(20).Hidden = False
+
+'If Range("L29").Value = 1 And Range("H27").Value = "" Then Rows(24).Hidden = True
+
+'Alert box if GLH is over 240
+If Range("H27").Value > 240 Then
+        MsgBox "You have entered too many optional units, please delete one or choose one with fewer GLH."
+    End If
+
+'End disable of screen update flickering
+Application.ScreenUpdating = True
+
+End Sub
+
+
