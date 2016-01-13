@@ -1,0 +1,4 @@
+Sub Cert_Clear()
+Range("I9:I10,I12:I15,I17:I21,I23:I25,G17:G21,G23:G25").ClearContents
+End Sub
+
