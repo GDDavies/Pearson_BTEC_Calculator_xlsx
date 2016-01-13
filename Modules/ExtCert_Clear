@@ -1,0 +1,3 @@
+Sub ExtCert_Clear()
+Range("G21:G29,G31:G35,G37,I9:I10,I12:I19,I21:I29,I31:I35,I37").ClearContents
+End Sub
