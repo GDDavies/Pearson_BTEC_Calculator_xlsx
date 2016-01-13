@@ -1,0 +1,592 @@
+Private Sub Worksheet_Change(ByVal Target As Range)
+                                                                    'Clear optional units and grades when sector changed
+Dim cell As Range
+Application.ScreenUpdating = False 'Disable screen update to stop flickering
+    For Each cell In Target
+        If cell.Address = "$G$5" Then
+            Application.EnableEvents = False
+                Range("G23:G31,G33:G40,G42:G46,I9:I12,I14:I21,I23:I31,I33:I40,I42:I46").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+'Clear grades when optional unit changed
+
+'    Dim l As Integer
+'    For l = 23 To 31
+'        If Range("G" & l) <> "" Then
+'            Application.EnableEvents = False
+'                Range("I" & l).ClearContents
+'            Application.EnableEvents = True
+'        Next l
+'    End If
+
+        For Each cell In Target
+        If cell.Address = "$G$23" Then
+            Application.EnableEvents = False
+                Range("I23").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+        For Each cell In Target
+        If cell.Address = "$G$24" Then
+            Application.EnableEvents = False
+                Range("I24").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+        For Each cell In Target
+        If cell.Address = "$G$25" Then
+            Application.EnableEvents = False
+                Range("I25").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+        For Each cell In Target
+        If cell.Address = "$G$26" Then
+            Application.EnableEvents = False
+                Range("I26").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+    For Each cell In Target
+        If cell.Address = "$G$27" Then
+            Application.EnableEvents = False
+                Range("I27").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+      For Each cell In Target
+        If cell.Address = "$G$28" Then
+            Application.EnableEvents = False
+                Range("I28").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+     For Each cell In Target
+        If cell.Address = "$G$29" Then
+            Application.EnableEvents = False
+                Range("I29").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+     For Each cell In Target
+        If cell.Address = "$G$30" Then
+            Application.EnableEvents = False
+                Range("I30").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+     For Each cell In Target
+        If cell.Address = "$G$31" Then
+            Application.EnableEvents = False
+                Range("I31").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+         For Each cell In Target
+        If cell.Address = "$G$33" Then
+            Application.EnableEvents = False
+                Range("I33").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+         For Each cell In Target
+        If cell.Address = "$G$34" Then
+            Application.EnableEvents = False
+                Range("I34").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+         For Each cell In Target
+        If cell.Address = "$G$35" Then
+            Application.EnableEvents = False
+                Range("I35").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+         For Each cell In Target
+        If cell.Address = "$G$36" Then
+            Application.EnableEvents = False
+                Range("I36").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+             For Each cell In Target
+        If cell.Address = "$G$37" Then
+            Application.EnableEvents = False
+                Range("I37").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+    
+             For Each cell In Target
+        If cell.Address = "$G$38" Then
+            Application.EnableEvents = False
+                Range("I38").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+             For Each cell In Target
+        If cell.Address = "$G$39" Then
+            Application.EnableEvents = False
+                Range("I39").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+             For Each cell In Target
+        If cell.Address = "$G$40" Then
+            Application.EnableEvents = False
+                Range("I40").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+    
+             For Each cell In Target
+        If cell.Address = "$G$42" Then
+            Application.EnableEvents = False
+                Range("I42").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+             For Each cell In Target
+        If cell.Address = "$G$43" Then
+            Application.EnableEvents = False
+                Range("I43").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+             For Each cell In Target
+        If cell.Address = "$G$44" Then
+            Application.EnableEvents = False
+                Range("I44").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+             For Each cell In Target
+        If cell.Address = "$G$45" Then
+            Application.EnableEvents = False
+                Range("I45").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+
+             For Each cell In Target
+        If cell.Address = "$G$46" Then
+            Application.EnableEvents = False
+                Range("I46").ClearContents
+            Application.EnableEvents = True
+        End If
+    Next cell
+    
+Dim cellG5 As String
+
+cellG5 = Range("G5").Value
+
+If cellG5 = "Art and Design" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("23:28").Hidden = False
+    Rows("29:46").Hidden = True
+
+ElseIf cellG5 = "Art and Design Design Crafts" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:18").Hidden = False
+    Rows("19:21").Hidden = True
+    Rows("23:26").Hidden = False
+    Rows("27:46").Hidden = True
+
+ElseIf cellG5 = "Art and Design Fashion and Textiles" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:19").Hidden = False
+    Rows("20:21").Hidden = True
+    Rows("23:25").Hidden = False
+    Rows("26:46").Hidden = True
+
+ElseIf cellG5 = "Art and Design Photography" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:18").Hidden = False
+    Rows("19:21").Hidden = True
+    Rows("23:27").Hidden = False
+    Rows("28:46").Hidden = True
+
+ElseIf cellG5 = "Art and Design Product Design" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:18").Hidden = False
+    Rows("19:21").Hidden = True
+    Rows("23:27").Hidden = False
+    Rows("28:46").Hidden = True
+
+ElseIf cellG5 = "Art and Design Visual Arts" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:18").Hidden = False
+    Rows("19:21").Hidden = True
+    Rows("23:26").Hidden = False
+    Rows("27:46").Hidden = True
+
+ElseIf cellG5 = "Art and Design Visual Communication" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:18").Hidden = False
+    Rows("19:21").Hidden = True
+    Rows("23:26").Hidden = False
+    Rows("27:46").Hidden = True
+
+ElseIf cellG5 = "Business" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:16").Hidden = False
+    Rows("17:21").Hidden = True
+    Rows("23:26").Hidden = False
+    Rows("27:31").Hidden = True
+    Rows("32:36").Hidden = False
+    Rows("37:46").Hidden = True
+    
+ElseIf cellG5 = "Construction and the Built Environment" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("23:26").Hidden = False
+    Rows("27:31").Hidden = True
+    Rows("32:36").Hidden = False
+    Rows("37:46").Hidden = True
+
+ElseIf cellG5 = "Creative Digital Media Production" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:15").Hidden = False
+    Rows("16:21").Hidden = True
+    Rows("22:27").Hidden = False
+    Rows("28:31").Hidden = True
+    Rows("32:35").Hidden = False
+    Rows("36:40").Hidden = True
+    Rows("41:45").Hidden = False
+    Rows("46").Hidden = True
+
+ElseIf cellG5 = "Engineering" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:24").Hidden = False
+    Rows("25:31").Hidden = True
+    Rows("32:36").Hidden = False
+    Rows("37:46").Hidden = True
+
+ElseIf cellG5 = "Engineering Technology Pathway" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:24").Hidden = False
+    Rows("25:31").Hidden = True
+    Rows("32:35").Hidden = False
+    Rows("36:46").Hidden = True
+    
+ElseIf cellG5 = "Engineering Maintenance Pathway" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:18").Hidden = False
+    Rows("19:21").Hidden = True
+    Rows("22:25").Hidden = False
+    Rows("26:31").Hidden = True
+    Rows("32:36").Hidden = False
+    Rows("37:46").Hidden = True
+    
+ElseIf cellG5 = "Engineering Manufacturing Pathway" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:25").Hidden = False
+    Rows("26:31").Hidden = True
+    Rows("32:37").Hidden = False
+    Rows("38:46").Hidden = True
+    
+ElseIf cellG5 = "Engineering Mechanical Pathway" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:25").Hidden = False
+    Rows("26:31").Hidden = True
+    Rows("32:38").Hidden = False
+    Rows("39:46").Hidden = True
+    
+ElseIf cellG5 = "Health and Social Care" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:26").Hidden = False
+    Rows("27:31").Hidden = True
+    Rows("32:36").Hidden = False
+    Rows("37:46").Hidden = True
+
+ElseIf cellG5 = "Hospitality" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:16").Hidden = False
+    Rows("17:21").Hidden = True
+    Rows("22:26").Hidden = False
+    Rows("27:31").Hidden = True
+    Rows("32:37").Hidden = False
+    Rows("38:46").Hidden = True
+
+ElseIf cellG5 = "Information and Creative Technology" Then
+    Rows("9:15").Hidden = False
+    Rows("16:21").Hidden = True
+    Rows("22:26").Hidden = False
+    Rows("27:31").Hidden = True
+    Rows("32:36").Hidden = False
+    Rows("37:46").Hidden = True
+
+ElseIf cellG5 = "Information and Creative Technology Computer Science" Then
+    Rows("9:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:26").Hidden = False
+    Rows("27:31").Hidden = True
+    Rows("32:46").Hidden = True
+
+ElseIf cellG5 = "Information and Creative Technology Systems Development and Support" Then
+    Rows("9:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:26").Hidden = False
+    Rows("27:31").Hidden = True
+    Rows("32:46").Hidden = True
+
+ElseIf cellG5 = "Music" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:16").Hidden = False
+    Rows("17:21").Hidden = True
+    Rows("22:24").Hidden = False
+    Rows("25:31").Hidden = True
+    Rows("32:35").Hidden = False
+    Rows("36:46").Hidden = True
+
+ElseIf cellG5 = "Performing Arts" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:16").Hidden = False
+    Rows("17:21").Hidden = True
+    Rows("22:24").Hidden = False
+    Rows("25:31").Hidden = True
+    Rows("32:38").Hidden = False
+    Rows("39:46").Hidden = True
+
+ElseIf cellG5 = "Performing Arts Acting" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:27").Hidden = False
+    Rows("28:31").Hidden = True
+    Rows("32:33").Hidden = False
+    Rows("34:46").Hidden = True
+
+ElseIf cellG5 = "Performing Arts Dance" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:27").Hidden = False
+    Rows("28:31").Hidden = True
+    Rows("32:33").Hidden = False
+    Rows("34:46").Hidden = True
+
+ElseIf cellG5 = "Performing Arts Production" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:27").Hidden = False
+    Rows("28:31").Hidden = True
+    Rows("32:33").Hidden = False
+    Rows("34:46").Hidden = True
+
+ElseIf cellG5 = "Public Services" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:16").Hidden = False
+    Rows("17:21").Hidden = True
+    Rows("22:26").Hidden = False
+    Rows("27:31").Hidden = True
+    Rows("32:36").Hidden = False
+    Rows("37:46").Hidden = True
+
+ElseIf cellG5 = "Sport" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:26").Hidden = False
+    Rows("27:31").Hidden = True
+    Rows("32:36").Hidden = False
+    Rows("37:46").Hidden = True
+
+ElseIf cellG5 = "Sport Fitness and Exercise" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:20").Hidden = False
+    Rows("21").Hidden = True
+    Rows("22:24").Hidden = False
+    Rows("25:31").Hidden = True
+    Rows("32:34").Hidden = False
+    Rows("35:46").Hidden = True
+
+ElseIf cellG5 = "Sport Outdoor and Adventurous Activities" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:26").Hidden = False
+    Rows("27:31").Hidden = True
+    Rows("32:34").Hidden = False
+    Rows("35:46").Hidden = True
+
+ElseIf cellG5 = "Travel and Tourism" Then
+    Rows("9:11").Hidden = False
+    Rows("12").Hidden = True
+    Rows("13").Hidden = False
+    Rows("14:17").Hidden = False
+    Rows("18:21").Hidden = True
+    Rows("22:26").Hidden = False
+    Rows("27:31").Hidden = True
+    Rows("32:36").Hidden = False
+    Rows("37:46").Hidden = True
+
+ElseIf cellG5 = "" Then
+    Rows("9:46").Hidden = False
+
+End If
+
+'Optional A loop to check if GLH has been met and cell is empty
+
+    Dim i As Integer
+    For i = 23 To 31
+        If Range("H47").Value = 480 And Range("G" & i) = "" Then
+            Rows(i & ":" & i).EntireRow.Hidden = True
+    End If
+    Next i
+    
+'Optional B loop to check if GLH has been met and cell is empty
+
+    Dim j As Integer
+    For j = 33 To 40
+        If Range("H47").Value = 480 And Range("G" & j) = "" Then
+            Rows(j & ":" & j).EntireRow.Hidden = True
+        End If
+    Next j
+    
+'Optional C loop to check if GLH has been met and cell is empty
+
+    Dim k As Integer
+    For k = 42 To 46
+        If Range("H47").Value = 480 And Range("G" & k) = "" Then
+            Rows(k & ":" & k).EntireRow.Hidden = True
+        End If
+    Next k
+
+'Remove row 32 divider if 480 GLH and no optional B units used
+If Range("H47").Value = 480 And Range("G33") = "" And Range("G34") = "" And Range("G35") = "" And Range("G36") = "" Then Rows(32).Hidden = True
+
+
+'If Range("H38").Value = 360 And Range("G29") <> "" And Range("G31") = "" Then Rows(30).Hidden = True
+'If Range("G5") <> "Music" And Range("G5") <> "Performing Arts" And Range("G5") <> "Hospitality" And Range("G5") <> "Performing Arts Acting" And Range("G5") <> "Performing Arts Dance" And Range("G5") <> "Creative Digital Media Production" And Range("H38").Value = 360 And Range("G29") = "" And Range("G31") <> "" Then Rows(30).Hidden = True
+
+'If Range("G5") = "Music" And Range("H38").Value = 360 And Range("G31") = "" Then Rows(31).Hidden = True
+'If Range("G5") = "Music" And Range("H38").Value = 360 And Range("G32") = "" Then Rows(32).Hidden = True
+'If Range("G5") = "Music" And Range("H38").Value = 360 And Range("G33") = "" Then Rows(33).Hidden = True
+
+'Alert box if GLH is over 480
+If Range("H47").Value > 480 Then
+        MsgBox "You have entered too many optional units, please delete one or choose one with fewer GLH."
+    End If
+    
+'Alert box Construction prerequisites
+If Worksheets("Diploma Validation").Range("P20").Value = 1 Then
+        MsgBox "Unit 6 is a compulsory prerequisite of Unit 16."
+    End If
+
+If Worksheets("Diploma Validation").Range("P23").Value = 1 Then
+        MsgBox "Unit 7 is a compulsory prerequisite of Unit 17."
+    End If
+    
+If Worksheets("Diploma Validation").Range("P26").Value = 1 Then
+        MsgBox "Unit 8 is a compulsory prerequisite of Unit 18."
+    End If
+    
+If Worksheets("Diploma Validation").Range("P29").Value = 1 Then
+        MsgBox "Unit 9 is a compulsory prerequisite of Unit 19."
+    End If
+    
+If Worksheets("Diploma Validation").Range("P32").Value = 1 Then
+        MsgBox "Unit 10 is a compulsory prerequisite of Unit 20."
+    End If
+    
+'Alert box Hospitality prerequisites
+If Worksheets("Diploma Validation").Range("AF12").Value = 1 Then
+        MsgBox "Unit 4 is a compulsory prerequisite of Unit 16."
+    End If
+    
+If Worksheets("Diploma Validation").Range("AF15").Value = 1 Then
+        MsgBox "Unit 6 is a compulsory prerequisite of Unit 13."
+    End If
+
+'End disable of screen update flickering
+Application.ScreenUpdating = True
+
+End Sub
