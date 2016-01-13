@@ -1,0 +1,44 @@
+Private Sub Worksheet_Change(ByVal Target As Range)
+Dim cell As Range
+Application.ScreenUpdating = False
+    For Each cell In Target
+        If cell.Address = "$H$5" Then
+            Application.EnableEvents = Flase
+                Range("H11:H12,J9:J12").ClearContents
+                    Application.EnableEvents = True
+        End If
+Next cell
+
+Dim glhValue As Integer
+Dim cellH12 As String
+Dim cellH11 As String
+
+glhValue = Range("I13").Value
+cellH12 = Range("H12").Value
+cellH11 = Range("H11").Value
+          
+If cellH11 = "" And glhValue >= 120 Then
+    Rows(11).Hidden = True
+    
+    ElseIf cellH12 = "" And glhValue >= 120 Then
+        Rows(12).Hidden = True
+        
+            ElseIf glhValue < 120 Then
+                Rows(11).Hidden = False
+                Rows(12).Hidden = False
+End If
+                    
+If Target.Address = "$H$5" Then
+    If Target.Value = "" Then Rows(11).Hidden = False
+    If Target.Value = "" Then Rows(12).Hidden = False
+    If Target.Value = "Performing Arts" Then Rows(12).Hidden = True
+End If
+        
+If Range("I13").Value > 120 Then
+        MsgBox "You have entered too many optional units, please delete one or choose one with fewer GLH."
+End If
+
+End Sub
+
+
+
