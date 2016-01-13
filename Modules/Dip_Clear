@@ -1,0 +1,3 @@
+Sub Dip_Clear()
+Range("G23:G31,G33:G40,G42:G46,I9:I12,I14:I21,I23:I31,I33:I40,I42:I46").ClearContents
+End Sub
